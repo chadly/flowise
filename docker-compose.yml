@@ -3,17 +3,10 @@ services:
     image: flowiseai/flowise
     container_name: flowise
     restart: always
-    environment:
-      - PORT=${PORT}
-      - PASSPHRASE=${PASSPHRASE}
-      - FLOWISE_USERNAME=${FLOWISE_USERNAME}
-      - FLOWISE_PASSWORD=${FLOWISE_PASSWORD}
-      - DEBUG=${DEBUG}
-      - DATABASE_PATH=${DATABASE_PATH}
-      - APIKEY_PATH=${APIKEY_PATH}
-      - SECRETKEY_PATH=${SECRETKEY_PATH}
-      - LOG_LEVEL=${LOG_LEVEL}
-      - LOG_PATH=${LOG_PATH}
+
+    env_file:
+      - .env
+
     ports:
       - '${PORT}:${PORT}'
     volumes:
@@ -21,16 +14,23 @@ services:
     command: /bin/sh -c "sleep 3; flowise start"
 
   llama:
-    container_name: llama
-    image: llama.cpp:latest
+    container_name: llama_python
+    image: llama.cpp:python
     build:
-      context: llama
-      dockerfile: llama/.devops/full-cuda.Dockerfile
+      context: llama/docker/cuda_simple
+      dockerfile: Dockerfile
+
+    environment:
+      - MODEL=/models/${MODEL_NAME}
+      - N_GPU_LAYERS=50
+      - N_CTX=16384
+      - USE_MLOCK=1
+
     volumes:
       - "./models:/models"
-    command: "-c ${CONTEXT_WINDOW} --host 0.0.0.0 -t 20 -ngl 80 -mg 1 --port 4096 --mlock -m /models/${MODEL_NAME}"
+
     ports:
-      - "4096:4096"
+      - "4096:8000"
 
     deploy:
       resources:
