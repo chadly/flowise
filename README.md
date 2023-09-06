@@ -4,6 +4,12 @@ This is a repository template that sets up [Flowise](https://flowiseai.com/) wit
 
 ## Usage
 
+Create a repository from this template, then clone with submodules:
+
+```
+git clone --recurse-submodules -j8 git://github.com/you/your_app.git
+```
+
 Create a `.env` file and then spin up docker:
 
 ```
