@@ -7,10 +7,10 @@ This is a repository template that sets up [Flowise](https://flowiseai.com/) wit
 Create a `.env` file and then spin up docker:
 
 ```
-cp flowise/docker/.env.example .env
+cp .env.example .env
 docker compose up
 ```
 
-Connect to `localhost:3000` and then [watch these videos](https://www.youtube.com/playlist?list=PL4HikwTaYE0HDOuXMm5sU6DH6_ZrHBLSJ) to learn how to use it.
+Connect to `localhost:3369` and then [watch these videos](https://www.youtube.com/playlist?list=PL4HikwTaYE0HDOuXMm5sU6DH6_ZrHBLSJ) to learn how to use it.
 
 <img width="100%" src="https://github.com/FlowiseAI/Flowise/blob/main/images/flowise.gif?raw=true">
