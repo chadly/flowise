@@ -7,7 +7,7 @@ if [ ! -f "/models/.download-complete" ] ; then
 	echo "########################################"
 
 	aria2c --allow-overwrite=false --auto-file-renaming=false --continue=true \
-		--max-connection-per-server=5 --input-file=/app/.devops/models.txt
+		--max-connection-per-server=5 --input-file=/app/models.txt
 
 	touch /models/.download-complete
 else
