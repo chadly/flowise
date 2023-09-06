@@ -1,0 +1,3 @@
+[submodule "flowise"]
+	path = flowise
+	url = git@github.com:FlowiseAI/Flowise.git
