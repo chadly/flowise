@@ -1,4 +1,14 @@
 services:
+  download_models:
+    image: aria2:latest
+    container_name: model_download
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - "./models:/models"
+
   flowise:
     image: flowiseai/flowise
     container_name: flowise
@@ -14,6 +24,10 @@ services:
     command: /bin/sh -c "sleep 3; flowise start"
 
   llama:
+    depends_on:
+      download_models:
+        condition: service_completed_successfully
+
     container_name: llama_python
     image: llama.cpp:python
     build:
