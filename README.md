@@ -1,20 +1,14 @@
-# Obsidian to Logseq Vault Migration
+# LLM App Template
 
-This uses GPT-4 to migrate my notes from [Obsidian](https://obsidian.md/) markdown format to block-level markdown that [Logseq](https://logseq.com/) understands.
+This is a repository template that sets up [Flowise](https://flowiseai.com/) with [llama.cpp](https://llama-cpp-python.readthedocs.io/). The idea is you develop LLM logic using Flowise, and then build an app to connect to the generated API.
 
 ## Usage
 
-Create a `.env` file with the contents:
+Create a `.env` file and then spin up docker:
 
 ```
-OPENAI_API_KEY=your secret API key from platform.openai.com
+cp flowise/docker/.env.example .env
+docker compose up
 ```
 
-Update the path in `index.ts` to point to your Obsidian vault. Then run:
-
-```
-npm install
-npm start
-```
-
-Feel free to modify the instructions to GPT-4 in `index.ts` to suit your needs.
+Connect to `localhost:3000` and then [watch these videos](https://www.youtube.com/playlist?list=PL4HikwTaYE0HDOuXMm5sU6DH6_ZrHBLSJ) to learn how to use it.
