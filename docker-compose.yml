@@ -10,7 +10,7 @@ services:
     ports:
       - '${PORT}:${PORT}'
     volumes:
-      - ~/.flowise:/root/.flowise
+      - ./data:/root/.flowise
     command: /bin/sh -c "sleep 3; flowise start"
 
   llama:

@@ -1,4 +1,5 @@
-/models
 .env
+/models
+/data
 
 /node_modules
