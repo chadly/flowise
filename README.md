@@ -4,7 +4,7 @@ This is a repository template that sets up [Flowise](https://flowiseai.com/) wit
 
 ## Usage
 
-Create a repository from this template, then clone with submodules:
+Create a repository [from this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), then clone with submodules:
 
 ```
 git clone --recurse-submodules -j8 git://github.com/you/your_app.git
