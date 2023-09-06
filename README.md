@@ -1,4 +1,4 @@
-# LLM App Template
+# Flowise App Template
 
 This is a repository template that sets up [Flowise](https://flowiseai.com/) with [llama.cpp](https://llama-cpp-python.readthedocs.io/). The idea is you develop LLM logic using Flowise, and then build an app to connect to the generated API.
 
